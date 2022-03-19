@@ -1,0 +1,70 @@
+# File: Makefile for g++ compiler
+# Author: Mohit Singh (mohitsingh5.ms@gmail.com)
+# Date: 2022-03-17
+
+
+# Directions:-
+# make compile -> Compile the source code
+# make link -> Link the object files
+# make run -> Execute software
+# make clean -> Clean all binaries
+
+# Source Directory
+SRC = src
+
+# Binary Directory
+BIN = bin
+
+# Target file name (without extension)
+TARGET = main
+
+# Dependencies name (without extension)
+DEPENDENCY = CP
+
+# Create .elf file from .o file
+$(BIN)/$(TARGET).elf: $(BIN)/$(DEPENDENCY).o $(BIN)/$(TARGET).o
+	@echo
+	@echo Linking:
+	avr-g++ $(AVRG++_FLAGS) $(BIN)/$(DEPENDENCY).o $(BIN)/$(TARGET).o -o$(BIN)/$(TARGET).elf
+
+# Assemble: Create .o file from .S file
+$(BIN)/$(DEPENDENCY1).o: $(SRC)/$(DEPENDENCY1).S
+	@echo
+	@echo Assembling:
+	avr-gcc -x assembler-with-cpp $(AVRGCC_FLAGS) $(SRC)/$(DEPENDENCY1).S -o$(BIN)/$(DEPENDENCY1).o
+
+# Compile: Create assembly file from C source file
+$(BIN)/$(TARGET): $(SRC)/$(TARGET).c
+	@echo
+	@echo Compiling:
+	avr-gcc -S $(AVRGCC_FLAGS) $(SRC)/$(TARGET).c -o$(BIN)/$(TARGET).S
+
+# Compile: Create object file from assembly file
+$(BIN)/$(DEPENDENCY).o: $(BIN)/$(DEPENDENCY).S
+	@echo
+	@echo Assembling:
+	avr-gcc $(AVRGCC_FLAGS) $(BIN)/$(DEPENDENCY).S -o$(BIN)/$(DEPENDENCY).o
+
+# Compile: Create assembly file from C++ dependency source file
+$(BIN)/$(DEPENDENCY).S: $(SRC)/$(DEPENDENCY).cpp
+	@echo
+	@echo Compiling:
+	avr-g++ $(AVRG++_FLAGS) $(SRC)/$(DEPENDENCY).cpp -o$(BIN)/$(DEPENDENCY).S
+
+# Compile: Create object file from assembly file
+$(BIN)/$(TARGET).o: $(BIN)/$(TARGET).S
+	@echo
+	@echo Assembling:
+	avr-gcc $(AVRGCC_FLAGS) $(BIN)/$(TARGET).S -o$(BIN)/$(TARGET).o
+
+# Compile: Create assembly file from C++ target source file
+$(BIN)/$(TARGET).S: $(SRC)/$(TARGET).cpp
+	@echo
+	@echo Compiling:
+	avr-g++ $(AVRG++_FLAGS) $(SRC)/$(TARGET).cpp -o$(BIN)/$(TARGET).S
+
+# Clean project
+clean:
+	@echo
+	@echo Cleaning Project:
+	rm $(BIN)/*
