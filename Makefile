@@ -46,14 +46,14 @@ $(BINDIR)/$(DEPENDENCY): $(OBJFILES)
 # Assemble: Create object file from assembly file
 $(OBJFILES): $(OBJDIR)/%.o: $(ASMDIR)/%.S
 	@echo
-	@echo Assembling $(ASMDIR)/%.S:
+	@echo Assembling $(ASMDIR)/$(wildcard %).S:
 	g++ -c $(G++_FLAGS) $< -o $@
 	@echo Assembling Done!
 
 # Compile: Create assembly file from C++ target source file
 $(ASMFILES): $(ASMDIR)/%.S: $(SRCDIR)/%.$(EXT)
 	@echo
-	@echo Compiling $(SRCDIR)/%.$(EXT):
+	@echo Compiling $(SRCDIR)/$(wildcard %).$(EXT):
 	g++ -S -c $(G++_FLAGS) $< -o $@
 	@echo Compiling Done!
 
@@ -71,7 +71,7 @@ run: link
 clean:
 	@echo
 	@echo Cleaning $(BINDIR)/* $(OBJDIR)/* $(ASMDIR)/*:
-	rm $(BINDIR)/*
-	rm $(OBJDIR)/*
-	rm $(ASMDIR)/*
+	rm -f $(BINDIR)/*
+	rm -f $(OBJDIR)/*
+	rm -f $(ASMDIR)/*
 	@echo Cleaning Done!
