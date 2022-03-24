@@ -1,4 +1,15 @@
+/**
+ * @file main.cpp
+ * @author Mohit Singh (mohitsingh5.ms@gmail.com)
+ * @brief main driver entry point for CompProg.cpp
+ * @date 2022-03-24
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "CompProg.hpp"
+#include <cstring>
 
 int main(int argc, char *argv[])
 {
@@ -10,19 +21,20 @@ int main(int argc, char *argv[])
     
     if(argc == 3)
     {
-        std::cout<<"\n"<<argv[1]<<"\n"<<std::endl;
-        if(argv[1] == "print")
+        if(strcmp(argv[1], "print") == 0)
+            std::cout<<"\n"<<argv[2]<<"\n"<<std::endl;
+        else if(strcmp(argv[1], "areaOfCircle") == 0)
         {
-            basic->print(argv[2]);
+            float area;
+            area = basic->charArrayToFloat(argv[2]);
+            std::cout<<"\n"<<basic->areaOfCircle(area)<<"\n"<<std::endl;
         }
         else
-        {
-            basic->print("Wrong Input!");
-        }
+            std::cout<<"\n"<<"Wrong Input!"<<"\n"<<std::endl;
     }
     else
     {
-        basic->print("Wrong Number of Arguments!");
+        std::cout<<"\n"<<"Wrong Number Of Arguments!"<<"\n"<<std::endl;
         return -1;
     }
 
