@@ -7,9 +7,9 @@
 	.string	"\n"
 	.text
 	.align 2
-	.globl	_ZN2CP5Basic16charArrayToFloatEPc
-	.type	_ZN2CP5Basic16charArrayToFloatEPc, @function
-_ZN2CP5Basic16charArrayToFloatEPc:
+	.globl	_ZN2CP5Basic16CharArrayToFloatEPc
+	.type	_ZN2CP5Basic16CharArrayToFloatEPc, @function
+_ZN2CP5Basic16CharArrayToFloatEPc:
 .LFB2526:
 	.cfi_startproc
 	endbr64
@@ -119,9 +119,6 @@ _ZN2CP5Basic16charArrayToFloatEPc:
 	movd	%eax, %xmm0
 	movq	%rdx, %rdi
 	call	_ZNSolsEf@PLT
-	leaq	.LC2(%rip), %rsi
-	movq	%rax, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
 	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
 	movq	%rax, %rsi
@@ -133,15 +130,15 @@ _ZN2CP5Basic16charArrayToFloatEPc:
 	ret
 	.cfi_endproc
 .LFE2526:
-	.size	_ZN2CP5Basic16charArrayToFloatEPc, .-_ZN2CP5Basic16charArrayToFloatEPc
+	.size	_ZN2CP5Basic16CharArrayToFloatEPc, .-_ZN2CP5Basic16CharArrayToFloatEPc
 	.section	.rodata
 .LC3:
-	.string	"Radius can't be negative!"
+	.string	"*"
 	.text
 	.align 2
-	.globl	_ZN2CP5Basic12areaOfCircleEf
-	.type	_ZN2CP5Basic12areaOfCircleEf, @function
-_ZN2CP5Basic12areaOfCircleEf:
+	.globl	_ZN2CP7Pattern9RectangleEjj
+	.type	_ZN2CP7Pattern9RectangleEjj, @function
+_ZN2CP7Pattern9RectangleEjj:
 .LFB2527:
 	.cfi_startproc
 	endbr64
@@ -150,44 +147,110 @@ _ZN2CP5Basic12areaOfCircleEf:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movss	%xmm0, -12(%rbp)
-	pxor	%xmm0, %xmm0
-	comiss	-12(%rbp), %xmm0
-	jbe	.L18
-	leaq	.LC2(%rip), %rsi
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	%edx, -32(%rbp)
+	movl	$1, -8(%rbp)
+.L16:
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	ja	.L17
+	movl	$1, -4(%rbp)
+.L15:
+	movl	-4(%rbp), %eax
+	cmpl	-32(%rbp), %eax
+	ja	.L14
+	leaq	.LC3(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC3(%rip), %rsi
-	movq	%rax, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC2(%rip), %rsi
-	movq	%rax, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	movq	%rax, %rdx
+	addl	$1, -4(%rbp)
+	jmp	.L15
+.L14:
 	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
 	movq	%rax, %rsi
-	movq	%rdx, %rdi
+	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZNSolsEPFRSoS_E@PLT
-	jmp	.L12
-.L18:
-	cvtss2sd	-12(%rbp), %xmm0
-	movsd	.LC4(%rip), %xmm1
-	call	pow@PLT
-	movsd	.LC5(%rip), %xmm1
-	mulsd	%xmm1, %xmm0
-	cvtsd2ss	%xmm0, %xmm0
-.L12:
+	addl	$1, -8(%rbp)
+	jmp	.L16
+.L17:
+	nop
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE2527:
-	.size	_ZN2CP5Basic12areaOfCircleEf, .-_ZN2CP5Basic12areaOfCircleEf
+	.size	_ZN2CP7Pattern9RectangleEjj, .-_ZN2CP7Pattern9RectangleEjj
+	.section	.rodata
+.LC4:
+	.string	" "
+	.text
+	.align 2
+	.globl	_ZN2CP7Pattern15HollowRectangleEjj
+	.type	_ZN2CP7Pattern15HollowRectangleEjj, @function
+_ZN2CP7Pattern15HollowRectangleEjj:
+.LFB2528:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	%edx, -32(%rbp)
+	movl	$1, -8(%rbp)
+.L25:
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	ja	.L26
+	movl	$1, -4(%rbp)
+.L24:
+	movl	-4(%rbp), %eax
+	cmpl	-32(%rbp), %eax
+	ja	.L20
+	cmpl	$1, -8(%rbp)
+	je	.L21
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	je	.L21
+	cmpl	$1, -4(%rbp)
+	je	.L21
+	movl	-4(%rbp), %eax
+	cmpl	-32(%rbp), %eax
+	jne	.L22
+.L21:
+	leaq	.LC3(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	jmp	.L23
+.L22:
+	leaq	.LC4(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+.L23:
+	addl	$1, -4(%rbp)
+	jmp	.L24
+.L20:
+	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
+	movq	%rax, %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZNSolsEPFRSoS_E@PLT
+	addl	$1, -8(%rbp)
+	jmp	.L25
+.L26:
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2528:
+	.size	_ZN2CP7Pattern15HollowRectangleEjj, .-_ZN2CP7Pattern15HollowRectangleEjj
 	.type	_Z41__static_initialization_and_destruction_0ii, @function
 _Z41__static_initialization_and_destruction_0ii:
-.LFB3232:
+.LFB3233:
 	.cfi_startproc
 	endbr64
 	pushq	%rbp
@@ -199,9 +262,9 @@ _Z41__static_initialization_and_destruction_0ii:
 	movl	%edi, -4(%rbp)
 	movl	%esi, -8(%rbp)
 	cmpl	$1, -4(%rbp)
-	jne	.L21
+	jne	.L29
 	cmpl	$65535, -8(%rbp)
-	jne	.L21
+	jne	.L29
 	leaq	_ZStL8__ioinit(%rip), %rdi
 	call	_ZNSt8ios_base4InitC1Ev@PLT
 	leaq	__dso_handle(%rip), %rdx
@@ -209,17 +272,17 @@ _Z41__static_initialization_and_destruction_0ii:
 	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
 	movq	%rax, %rdi
 	call	__cxa_atexit@PLT
-.L21:
+.L29:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE3232:
+.LFE3233:
 	.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destruction_0ii
-	.type	_GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc, @function
-_GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc:
-.LFB3233:
+	.type	_GLOBAL__sub_I__ZN2CP5Basic16CharArrayToFloatEPc, @function
+_GLOBAL__sub_I__ZN2CP5Basic16CharArrayToFloatEPc:
+.LFB3234:
 	.cfi_startproc
 	endbr64
 	pushq	%rbp
@@ -234,25 +297,17 @@ _GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE3233:
-	.size	_GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc, .-_GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc
+.LFE3234:
+	.size	_GLOBAL__sub_I__ZN2CP5Basic16CharArrayToFloatEPc, .-_GLOBAL__sub_I__ZN2CP5Basic16CharArrayToFloatEPc
 	.section	.init_array,"aw"
 	.align 8
-	.quad	_GLOBAL__sub_I__ZN2CP5Basic16charArrayToFloatEPc
+	.quad	_GLOBAL__sub_I__ZN2CP5Basic16CharArrayToFloatEPc
 	.section	.rodata
 	.align 4
 .LC1:
 	.long	1092616192
-	.align 8
-.LC4:
-	.long	0
-	.long	1073741824
-	.align 8
-.LC5:
-	.long	1413754136
-	.long	1074340347
 	.hidden	__dso_handle
-	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04) 9.4.0"
+	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"
 	.align 8

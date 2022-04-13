@@ -10,35 +10,45 @@
 
 #include "CompProg.hpp"
 
-float CP::Basic::charArrayToFloat(char* str)
-{
+float CP::Basic::CharArrayToFloat(char* str) {
     int i;
     float x;
     bool flag = false;
-    for (i=0, x=0.0f; str[i]; i++)
-    {
-        if(i == 0 && str[i] == '-')
+    for (i=0, x=0.0f; str[i]; i++) {
+        if (i == 0 && str[i] == '-')
             i++;
-        else if(str[i] >= '0' && str[i] <= '9')
-        {
-            if(flag == false)
-                x = x*10 + (str[i]-48);
+        else if (str[i] >= '0' && str[i] <= '9') {
+            if (flag == false)
+                x = x * 10 + (str[i] - 48);
             else
-                x = x + (str[i]-48)/10;
+                x = x + (str[i] - 48) / 10;
         }
-        else if(str[i] == '.')
+        else if (str[i] == '.')
             flag = true;
         else
             break;
     }
-    std::cout<<"\n"<<x<<"\n"<<std::endl;
+    std::cout << "\n" << x << std::endl;
     return x;
 }
 
-float CP::Basic::areaOfCircle(float radius)
-{
-    if(radius < 0)
-        std::cout<<"\n"<<"Radius can't be negative!"<<"\n"<<std::endl;
-    else
-        return M_PI*pow(radius, 2);
+void CP::Pattern::Rectangle(unsigned int rows, unsigned int cols) {
+    for (unsigned int i = 1; i <= rows; i++) {
+        for (unsigned int j = 1; j <= cols; j++) {
+            std::cout << "*";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::HollowRectangle(unsigned int rows, unsigned int cols) {
+    for (unsigned int i = 1; i <= rows; i++) {
+        for (unsigned int j = 1; j <= cols; j++) {
+            if ((i == 1) || (i == rows) || (j == 1) || (j == cols))
+                std::cout << "*";
+            else 
+                std::cout << " ";
+        }
+        std::cout << std::endl;
+    }
 }

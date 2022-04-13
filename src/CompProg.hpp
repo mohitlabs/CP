@@ -15,13 +15,15 @@
     #include <string>
     #include <cmath>
     
-    namespace CP
-    {
-        class Basic
-        {
+    namespace CP {
+        class Basic {
             public:
-                float charArrayToFloat(char*);
-                float areaOfCircle(float);
+                float CharArrayToFloat(char*);
+        };
+        class Pattern {
+            public:
+                void Rectangle(unsigned int, unsigned int);
+                void HollowRectangle(unsigned int, unsigned int);
         };
     }
 

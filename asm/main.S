@@ -4,15 +4,21 @@
 	.comm	_ZStL8__ioinit,1,1
 	.section	.rodata
 .LC0:
-	.string	"print"
+	.string	"Print"
 .LC1:
 	.string	"\n"
 .LC2:
-	.string	"areaOfCircle"
-.LC3:
-	.string	"Wrong Input!"
+	.string	"AreaOfCircle"
 .LC4:
-	.string	"Wrong Number Of Arguments!"
+	.string	"Radius can't be negative!"
+.LC7:
+	.string	"Invalid Input!"
+.LC8:
+	.string	"Rectangle"
+.LC9:
+	.string	"HollowRectangle"
+.LC10:
+	.string	"Invalid Number Of Arguments!"
 	.text
 	.globl	main
 	.type	main, @function
@@ -26,16 +32,19 @@ main:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	pushq	%rbx
-	subq	$40, %rsp
+	subq	$72, %rsp
 	.cfi_offset 3, -24
-	movl	%edi, -36(%rbp)
-	movq	%rsi, -48(%rbp)
+	movl	%edi, -68(%rbp)
+	movq	%rsi, -80(%rbp)
+	movl	$1, %edi
+	call	_Znwm@PLT
+	movq	%rax, -32(%rbp)
 	movl	$1, %edi
 	call	_Znwm@PLT
 	movq	%rax, -24(%rbp)
-	cmpl	$3, -36(%rbp)
+	cmpl	$3, -68(%rbp)
 	jne	.L2
-	movq	-48(%rbp), %rax
+	movq	-80(%rbp), %rax
 	addq	$8, %rax
 	movq	(%rax), %rax
 	leaq	.LC0(%rip), %rsi
@@ -47,14 +56,11 @@ main:
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
-	movq	-48(%rbp), %rax
+	movq	-80(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rax
 	movq	%rax, %rsi
 	movq	%rdx, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC1(%rip), %rsi
-	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
 	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
@@ -63,7 +69,7 @@ main:
 	call	_ZNSolsEPFRSoS_E@PLT
 	jmp	.L4
 .L3:
-	movq	-48(%rbp), %rax
+	movq	-80(%rbp), %rax
 	addq	$8, %rax
 	movq	(%rax), %rax
 	leaq	.LC2(%rip), %rsi
@@ -71,29 +77,42 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L5
-	movq	-48(%rbp), %rax
+	movq	-80(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rdx
-	movq	-24(%rbp), %rax
+	movq	-32(%rbp), %rax
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
-	call	_ZN2CP5Basic16charArrayToFloatEPc@PLT
+	call	_ZN2CP5Basic16CharArrayToFloatEPc@PLT
 	movd	%xmm0, %eax
-	movl	%eax, -28(%rbp)
+	movl	%eax, -36(%rbp)
+	pxor	%xmm0, %xmm0
+	comiss	-36(%rbp), %xmm0
+	jbe	.L13
+	leaq	.LC1(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	leaq	.LC4(%rip), %rsi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	movq	%rax, %rdx
+	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
+	movq	%rax, %rsi
+	movq	%rdx, %rdi
+	call	_ZNSolsEPFRSoS_E@PLT
+	jmp	.L4
+.L13:
 	leaq	.LC1(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rbx
-	movl	-28(%rbp), %edx
-	movq	-24(%rbp), %rax
-	movd	%edx, %xmm0
-	movq	%rax, %rdi
-	call	_ZN2CP5Basic12areaOfCircleEf@PLT
+	cvtss2sd	-36(%rbp), %xmm0
+	movsd	.LC5(%rip), %xmm1
+	call	pow@PLT
+	movsd	.LC6(%rip), %xmm1
+	mulsd	%xmm1, %xmm0
 	movq	%rbx, %rdi
-	call	_ZNSolsEf@PLT
-	leaq	.LC1(%rip), %rsi
-	movq	%rax, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	call	_ZNSolsEd@PLT
 	movq	%rax, %rdx
 	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
 	movq	%rax, %rsi
@@ -104,10 +123,7 @@ main:
 	leaq	.LC1(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC3(%rip), %rsi
-	movq	%rax, %rdi
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC1(%rip), %rsi
+	leaq	.LC7(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
@@ -117,13 +133,93 @@ main:
 	call	_ZNSolsEPFRSoS_E@PLT
 	jmp	.L4
 .L2:
+	cmpl	$4, -68(%rbp)
+	jne	.L8
+	movq	-80(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	leaq	.LC8(%rip), %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L9
+	movq	-80(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rdx
+	movq	-32(%rbp), %rax
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	_ZN2CP5Basic16CharArrayToFloatEPc@PLT
+	cvttss2siq	%xmm0, %rax
+	movl	%eax, -44(%rbp)
+	movq	-80(%rbp), %rax
+	addq	$24, %rax
+	movq	(%rax), %rdx
+	movq	-32(%rbp), %rax
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	_ZN2CP5Basic16CharArrayToFloatEPc@PLT
+	cvttss2siq	%xmm0, %rax
+	movl	%eax, -40(%rbp)
+	movl	-40(%rbp), %edx
+	movl	-44(%rbp), %ecx
+	movq	-24(%rbp), %rax
+	movl	%ecx, %esi
+	movq	%rax, %rdi
+	call	_ZN2CP7Pattern9RectangleEjj@PLT
+	jmp	.L4
+.L9:
+	movq	-80(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	leaq	.LC9(%rip), %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L10
+	movq	-80(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rdx
+	movq	-32(%rbp), %rax
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	_ZN2CP5Basic16CharArrayToFloatEPc@PLT
+	cvttss2siq	%xmm0, %rax
+	movl	%eax, -52(%rbp)
+	movq	-80(%rbp), %rax
+	addq	$24, %rax
+	movq	(%rax), %rdx
+	movq	-32(%rbp), %rax
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	_ZN2CP5Basic16CharArrayToFloatEPc@PLT
+	cvttss2siq	%xmm0, %rax
+	movl	%eax, -48(%rbp)
+	movl	-48(%rbp), %edx
+	movl	-52(%rbp), %ecx
+	movq	-24(%rbp), %rax
+	movl	%ecx, %esi
+	movq	%rax, %rdi
+	call	_ZN2CP7Pattern15HollowRectangleEjj@PLT
+	jmp	.L4
+.L10:
 	leaq	.LC1(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC4(%rip), %rsi
+	leaq	.LC7(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	movq	%rax, %rdx
+	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
+	movq	%rax, %rsi
+	movq	%rdx, %rdi
+	call	_ZNSolsEPFRSoS_E@PLT
+	jmp	.L4
+.L8:
 	leaq	.LC1(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	leaq	.LC10(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
@@ -132,11 +228,11 @@ main:
 	movq	%rdx, %rdi
 	call	_ZNSolsEPFRSoS_E@PLT
 	movl	$-1, %eax
-	jmp	.L6
+	jmp	.L11
 .L4:
 	movl	$0, %eax
-.L6:
-	addq	$40, %rsp
+.L11:
+	addq	$72, %rsp
 	popq	%rbx
 	popq	%rbp
 	.cfi_def_cfa 7, 8
@@ -158,9 +254,9 @@ _Z41__static_initialization_and_destruction_0ii:
 	movl	%edi, -4(%rbp)
 	movl	%esi, -8(%rbp)
 	cmpl	$1, -4(%rbp)
-	jne	.L9
+	jne	.L16
 	cmpl	$65535, -8(%rbp)
-	jne	.L9
+	jne	.L16
 	leaq	_ZStL8__ioinit(%rip), %rdi
 	call	_ZNSt8ios_base4InitC1Ev@PLT
 	leaq	__dso_handle(%rip), %rdx
@@ -168,7 +264,7 @@ _Z41__static_initialization_and_destruction_0ii:
 	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
 	movq	%rax, %rdi
 	call	__cxa_atexit@PLT
-.L9:
+.L16:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
@@ -198,8 +294,17 @@ _GLOBAL__sub_I_main:
 	.section	.init_array,"aw"
 	.align 8
 	.quad	_GLOBAL__sub_I_main
+	.section	.rodata
+	.align 8
+.LC5:
+	.long	0
+	.long	1073741824
+	.align 8
+.LC6:
+	.long	1413754136
+	.long	1074340347
 	.hidden	__dso_handle
-	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04) 9.4.0"
+	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"
 	.align 8
