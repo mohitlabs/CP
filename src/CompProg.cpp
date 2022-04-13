@@ -10,26 +10,11 @@
 
 #include "CompProg.hpp"
 
-float CP::Basic::CharArrayToFloat(char* str) {
-    int i;
-    float x;
-    bool flag = false;
-    for (i=0, x=0.0f; str[i]; i++) {
-        if (i == 0 && str[i] == '-')
-            i++;
-        else if (str[i] >= '0' && str[i] <= '9') {
-            if (flag == false)
-                x = x * 10 + (str[i] - 48);
-            else
-                x = x + (str[i] - 48) / 10;
-        }
-        else if (str[i] == '.')
-            flag = true;
-        else
-            break;
-    }
-    std::cout << "\n" << x << std::endl;
-    return x;
+void CP::Basic::AreaOfCircle(float radius) {
+    if (radius < 0.0f)
+        std::cout << "\n" << "Radius can't be negative!" << std::endl;
+    else
+        std::cout << "\n" << M_PI * pow(radius, 2) << std::endl;
 }
 
 void CP::Pattern::Rectangle(unsigned int rows, unsigned int cols) {
@@ -48,6 +33,48 @@ void CP::Pattern::HollowRectangle(unsigned int rows, unsigned int cols) {
                 std::cout << "*";
             else 
                 std::cout << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::HalfPyramid(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = 1; j <= i; j++) {
+            std::cout << "*";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::XInvertedHalfPyramid(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = 1; j <= n; j++) {
+            if (j <= n-i)
+                std::cout << " ";
+            else
+                std::cout << "*";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::YInvertedHalfPyramid(unsigned int n) {
+    for (unsigned int i = n; i >= 1; i--) {
+        for (unsigned int j = 1; j <= i; j++) {
+            std::cout << "*";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::XYInvertedHalfPyramid(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = 1; j <= n; j++) {
+            if (j <= i-1)
+                std::cout << " ";
+            else
+                std::cout << "*";
         }
         std::cout << std::endl;
     }

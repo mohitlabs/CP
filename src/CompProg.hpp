@@ -18,12 +18,16 @@
     namespace CP {
         class Basic {
             public:
-                float CharArrayToFloat(char*);
+                inline void AreaOfCircle(float);
         };
         class Pattern {
             public:
                 void Rectangle(unsigned int, unsigned int);
                 void HollowRectangle(unsigned int, unsigned int);
+                void HalfPyramid(unsigned int);
+                void XInvertedHalfPyramid(unsigned int);
+                void YInvertedHalfPyramid(unsigned int);
+                void XYInvertedHalfPyramid(unsigned int);
         };
     }
 

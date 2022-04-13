@@ -11,7 +11,7 @@
 #include <cstring>
 #include "CompProg.hpp"
 
-int main(int argc, char* argv[]) {
+int main(const int argc, char* const argv[]) {
     #ifdef _WIN32
         system("cls");
     #endif
@@ -23,28 +23,39 @@ int main(int argc, char* argv[]) {
         if (strcmp(argv[1], "Print") == 0)
             std::cout << "\n" << argv[2] << std::endl;
         else if (strcmp(argv[1], "AreaOfCircle") == 0) {
-            float radius;
-            radius = basic -> CharArrayToFloat(argv[2]);
-            if (radius < 0)
-                std::cout << "\n" << "Radius can't be negative!" << std::endl;
-            else
-                std::cout << "\n" << M_PI * pow(radius, 2) << std::endl;
+            basic -> AreaOfCircle(std::stof(argv[2]));
         }
-        else
-            std::cout << "\n" << "Invalid Input!" << std::endl;
-    }
-    else if (argc == 4) {
-        if (strcmp(argv[1], "Rectangle") == 0) {
+        else if (strcmp(argv[1], "Rectangle") == 0) {
             unsigned int rows, cols;
-            rows = (unsigned int) basic -> CharArrayToFloat(argv[2]);
-            cols = (unsigned int) basic -> CharArrayToFloat(argv[3]);
+            rows = std::stoi(strtok(argv[2], "xX"));
+            cols = std::stoi(strtok(NULL, "xX"));
             pattern -> Rectangle(rows, cols);
         }
         else if (strcmp(argv[1], "HollowRectangle") == 0) {
             unsigned int rows, cols;
-            rows = (unsigned int) basic -> CharArrayToFloat(argv[2]);
-            cols = (unsigned int) basic -> CharArrayToFloat(argv[3]);
+            rows = std::stoi(strtok(argv[2], "xX"));
+            cols = std::stoi(strtok(NULL, "xX"));
             pattern -> HollowRectangle(rows, cols);
+        }
+        else if (strcmp(argv[1], "HalfPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> HalfPyramid(n);
+        }
+        else if (strcmp(argv[1], "XInvertedHalfPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> XInvertedHalfPyramid(n);
+        }
+        else if (strcmp(argv[1], "YInvertedHalfPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> YInvertedHalfPyramid(n);
+        }
+        else if (strcmp(argv[1], "XYInvertedHalfPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> XYInvertedHalfPyramid(n);
         }
         else
             std::cout << "\n" << "Invalid Input!" << std::endl;
