@@ -184,22 +184,28 @@ _ZNSt7__cxx114stofERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPm:
 .LC4:
 	.string	"AreaOfCircle"
 .LC5:
-	.string	"Rectangle"
+	.string	"StarRectangle"
 .LC6:
 	.string	"xX"
 .LC7:
-	.string	"HollowRectangle"
+	.string	"HollowStarRectangle"
 .LC8:
-	.string	"HalfPyramid"
+	.string	"HalfStarPyramid"
 .LC9:
-	.string	"XInvertedHalfPyramid"
+	.string	"XInvertedHalfStarPyramid"
 .LC10:
-	.string	"YInvertedHalfPyramid"
+	.string	"YInvertedHalfStarPyramid"
 .LC11:
-	.string	"XYInvertedHalfPyramid"
+	.string	"XYInvertedHalfStarPyramid"
 .LC12:
-	.string	"Invalid Input!"
+	.string	"HalfNumPyramid"
 .LC13:
+	.string	"FloydsTriangle"
+.LC14:
+	.string	"ButterflyStarPattern"
+.LC15:
+	.string	"Invalid Input!"
+.LC16:
 	.string	"Invalid Number Of Arguments!"
 	.text
 	.globl	main
@@ -266,13 +272,13 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L17
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -291,7 +297,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	jmp	.L16
@@ -304,7 +310,7 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L18
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
@@ -314,7 +320,7 @@ main:
 	movq	%rax, %rdi
 	call	strtok@PLT
 	movq	%rax, %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -332,17 +338,17 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	leaq	.LC6(%rip), %rsi
 	movl	$0, %edi
 	call	strtok@PLT
 	movq	%rax, %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -360,7 +366,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-84(%rbp), %edx
@@ -369,7 +375,7 @@ main:
 	movl	%ecx, %esi
 	movq	%rax, %rdi
 .LEHB7:
-	call	_ZN2CP7Pattern9RectangleEjj@PLT
+	call	_ZN2CP7Pattern13StarRectangleEjj@PLT
 .LEHE7:
 	jmp	.L16
 .L18:
@@ -381,7 +387,7 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L19
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
@@ -391,7 +397,7 @@ main:
 	movq	%rax, %rdi
 	call	strtok@PLT
 	movq	%rax, %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -409,17 +415,17 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	leaq	.LC6(%rip), %rsi
 	movl	$0, %edi
 	call	strtok@PLT
 	movq	%rax, %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -437,7 +443,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-92(%rbp), %edx
@@ -446,7 +452,7 @@ main:
 	movl	%ecx, %esi
 	movq	%rax, %rdi
 .LEHB12:
-	call	_ZN2CP7Pattern15HollowRectangleEjj@PLT
+	call	_ZN2CP7Pattern19HollowStarRectangleEjj@PLT
 .LEHE12:
 	jmp	.L16
 .L19:
@@ -458,13 +464,13 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L20
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -482,7 +488,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-100(%rbp), %edx
@@ -490,7 +496,7 @@ main:
 	movl	%edx, %esi
 	movq	%rax, %rdi
 .LEHB15:
-	call	_ZN2CP7Pattern11HalfPyramidEj@PLT
+	call	_ZN2CP7Pattern15HalfStarPyramidEj@PLT
 .LEHE15:
 	jmp	.L16
 .L20:
@@ -502,13 +508,13 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L21
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -526,7 +532,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-104(%rbp), %edx
@@ -534,7 +540,7 @@ main:
 	movl	%edx, %esi
 	movq	%rax, %rdi
 .LEHB18:
-	call	_ZN2CP7Pattern20XInvertedHalfPyramidEj@PLT
+	call	_ZN2CP7Pattern24XInvertedHalfStarPyramidEj@PLT
 .LEHE18:
 	jmp	.L16
 .L21:
@@ -546,13 +552,13 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L22
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -570,7 +576,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-108(%rbp), %edx
@@ -578,7 +584,7 @@ main:
 	movl	%edx, %esi
 	movq	%rax, %rdi
 .LEHB21:
-	call	_ZN2CP7Pattern20YInvertedHalfPyramidEj@PLT
+	call	_ZN2CP7Pattern24YInvertedHalfStarPyramidEj@PLT
 .LEHE21:
 	jmp	.L16
 .L22:
@@ -590,13 +596,13 @@ main:
 	call	strcmp@PLT
 	testl	%eax, %eax
 	jne	.L23
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcEC1Ev@PLT
 	movq	-144(%rbp), %rax
 	addq	$16, %rax
 	movq	(%rax), %rcx
-	leaq	-113(%rbp), %rdx
+	leaq	-125(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
@@ -614,7 +620,7 @@ main:
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	leaq	-113(%rbp), %rax
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movl	-112(%rbp), %edx
@@ -622,13 +628,145 @@ main:
 	movl	%edx, %esi
 	movq	%rax, %rdi
 .LEHB24:
-	call	_ZN2CP7Pattern21XYInvertedHalfPyramidEj@PLT
+	call	_ZN2CP7Pattern25XYInvertedHalfStarPyramidEj@PLT
+.LEHE24:
 	jmp	.L16
 .L23:
+	movq	-144(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	leaq	.LC12(%rip), %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L24
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcEC1Ev@PLT
+	movq	-144(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rcx
+	leaq	-125(%rbp), %rdx
+	leaq	-64(%rbp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+.LEHB25:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_
+.LEHE25:
+	leaq	-64(%rbp), %rax
+	movl	$10, %edx
+	movl	$0, %esi
+	movq	%rax, %rdi
+.LEHB26:
+	call	_ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi
+.LEHE26:
+	movl	%eax, -116(%rbp)
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movl	-116(%rbp), %edx
+	movq	-72(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+.LEHB27:
+	call	_ZN2CP7Pattern14HalfNumPatternEj@PLT
+.LEHE27:
+	jmp	.L16
+.L24:
+	movq	-144(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	leaq	.LC13(%rip), %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L25
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcEC1Ev@PLT
+	movq	-144(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rcx
+	leaq	-125(%rbp), %rdx
+	leaq	-64(%rbp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+.LEHB28:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_
+.LEHE28:
+	leaq	-64(%rbp), %rax
+	movl	$10, %edx
+	movl	$0, %esi
+	movq	%rax, %rdi
+.LEHB29:
+	call	_ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi
+.LEHE29:
+	movl	%eax, -120(%rbp)
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movl	-120(%rbp), %edx
+	movq	-72(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+.LEHB30:
+	call	_ZN2CP7Pattern14FloydsTriangleEj@PLT
+.LEHE30:
+	jmp	.L16
+.L25:
+	movq	-144(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	leaq	.LC14(%rip), %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L26
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcEC1Ev@PLT
+	movq	-144(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rcx
+	leaq	-125(%rbp), %rdx
+	leaq	-64(%rbp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+.LEHB31:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_
+.LEHE31:
+	leaq	-64(%rbp), %rax
+	movl	$10, %edx
+	movl	$0, %esi
+	movq	%rax, %rdi
+.LEHB32:
+	call	_ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi
+.LEHE32:
+	movl	%eax, -124(%rbp)
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movl	-124(%rbp), %edx
+	movq	-72(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+.LEHB33:
+	call	_ZN2CP7Pattern20ButterflyStarPatternEj@PLT
+	jmp	.L16
+.L26:
 	leaq	.LC3(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC12(%rip), %rsi
+	leaq	.LC15(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
@@ -641,7 +779,7 @@ main:
 	leaq	.LC3(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	leaq	.LC13(%rip), %rsi
+	leaq	.LC16(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	movq	%rax, %rdx
@@ -650,171 +788,222 @@ main:
 	movq	%rdx, %rdi
 	call	_ZNSolsEPFRSoS_E@PLT
 	movl	$-1, %eax
-	jmp	.L24
+	jmp	.L27
 .L16:
 	movl	$0, %eax
-.L24:
+.L27:
 	movq	-24(%rbp), %rcx
 	xorq	%fs:40, %rcx
-	je	.L43
-	jmp	.L62
-.L45:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L26
-.L44:
-	endbr64
-	movq	%rax, %rbx
-.L26:
-	leaq	-113(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSaIcED1Ev@PLT
-	movq	%rbx, %rax
-	movq	%rax, %rdi
-	call	_Unwind_Resume@PLT
-.L47:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L28
-.L46:
-	endbr64
-	movq	%rax, %rbx
-.L28:
-	leaq	-113(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSaIcED1Ev@PLT
-	movq	%rbx, %rax
-	movq	%rax, %rdi
-	call	_Unwind_Resume@PLT
-.L49:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L30
-.L48:
-	endbr64
-	movq	%rax, %rbx
-.L30:
-	leaq	-113(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSaIcED1Ev@PLT
-	movq	%rbx, %rax
-	movq	%rax, %rdi
-	call	_Unwind_Resume@PLT
-.L51:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L32
-.L50:
-	endbr64
-	movq	%rax, %rbx
-.L32:
-	leaq	-113(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSaIcED1Ev@PLT
-	movq	%rbx, %rax
-	movq	%rax, %rdi
-	call	_Unwind_Resume@PLT
-.L53:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L34
-.L52:
-	endbr64
-	movq	%rax, %rbx
-.L34:
-	leaq	-113(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSaIcED1Ev@PLT
-	movq	%rbx, %rax
-	movq	%rax, %rdi
-	call	_Unwind_Resume@PLT
-.L55:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L36
+	je	.L52
+	jmp	.L77
 .L54:
 	endbr64
 	movq	%rax, %rbx
-.L36:
-	leaq	-113(%rbp), %rax
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L29
+.L53:
+	endbr64
+	movq	%rax, %rbx
+.L29:
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movq	%rbx, %rax
 	movq	%rax, %rdi
 	call	_Unwind_Resume@PLT
-.L57:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L38
 .L56:
 	endbr64
 	movq	%rax, %rbx
-.L38:
-	leaq	-113(%rbp), %rax
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L31
+.L55:
+	endbr64
+	movq	%rax, %rbx
+.L31:
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movq	%rbx, %rax
 	movq	%rax, %rdi
 	call	_Unwind_Resume@PLT
-.L59:
-	endbr64
-	movq	%rax, %rbx
-	leaq	-64(%rbp), %rax
-	movq	%rax, %rdi
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L40
 .L58:
 	endbr64
 	movq	%rax, %rbx
-.L40:
-	leaq	-113(%rbp), %rax
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L33
+.L57:
+	endbr64
+	movq	%rax, %rbx
+.L33:
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movq	%rbx, %rax
 	movq	%rax, %rdi
 	call	_Unwind_Resume@PLT
-.L61:
+.L60:
 	endbr64
 	movq	%rax, %rbx
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	jmp	.L42
-.L60:
+	jmp	.L35
+.L59:
 	endbr64
 	movq	%rax, %rbx
-.L42:
-	leaq	-113(%rbp), %rax
+.L35:
+	leaq	-125(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNSaIcED1Ev@PLT
 	movq	%rbx, %rax
 	movq	%rax, %rdi
 	call	_Unwind_Resume@PLT
-.LEHE24:
 .L62:
-	call	__stack_chk_fail@PLT
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L37
+.L61:
+	endbr64
+	movq	%rax, %rbx
+.L37:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L64:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L39
+.L63:
+	endbr64
+	movq	%rax, %rbx
+.L39:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L66:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L41
+.L65:
+	endbr64
+	movq	%rax, %rbx
+.L41:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L68:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L43
+.L67:
+	endbr64
+	movq	%rax, %rbx
 .L43:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L70:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L45
+.L69:
+	endbr64
+	movq	%rax, %rbx
+.L45:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L72:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L47
+.L71:
+	endbr64
+	movq	%rax, %rbx
+.L47:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L74:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L49
+.L73:
+	endbr64
+	movq	%rax, %rbx
+.L49:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.L76:
+	endbr64
+	movq	%rax, %rbx
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	jmp	.L51
+.L75:
+	endbr64
+	movq	%rax, %rbx
+.L51:
+	leaq	-125(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZNSaIcED1Ev@PLT
+	movq	%rbx, %rax
+	movq	%rax, %rdi
+	call	_Unwind_Resume@PLT
+.LEHE33:
+.L77:
+	call	__stack_chk_fail@PLT
+.L52:
 	addq	$136, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -836,27 +1025,27 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB1-.LFB2526
 	.uleb128 .LEHE1-.LEHB1
-	.uleb128 .L44-.LFB2526
+	.uleb128 .L53-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB2-.LFB2526
 	.uleb128 .LEHE2-.LEHB2
-	.uleb128 .L45-.LFB2526
+	.uleb128 .L54-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB3-.LFB2526
 	.uleb128 .LEHE3-.LEHB3
-	.uleb128 .L46-.LFB2526
+	.uleb128 .L55-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB4-.LFB2526
 	.uleb128 .LEHE4-.LEHB4
-	.uleb128 .L47-.LFB2526
+	.uleb128 .L56-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB5-.LFB2526
 	.uleb128 .LEHE5-.LEHB5
-	.uleb128 .L48-.LFB2526
+	.uleb128 .L57-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB6-.LFB2526
 	.uleb128 .LEHE6-.LEHB6
-	.uleb128 .L49-.LFB2526
+	.uleb128 .L58-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB7-.LFB2526
 	.uleb128 .LEHE7-.LEHB7
@@ -864,19 +1053,19 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB8-.LFB2526
 	.uleb128 .LEHE8-.LEHB8
-	.uleb128 .L50-.LFB2526
+	.uleb128 .L59-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB9-.LFB2526
 	.uleb128 .LEHE9-.LEHB9
-	.uleb128 .L51-.LFB2526
+	.uleb128 .L60-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB10-.LFB2526
 	.uleb128 .LEHE10-.LEHB10
-	.uleb128 .L52-.LFB2526
+	.uleb128 .L61-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB11-.LFB2526
 	.uleb128 .LEHE11-.LEHB11
-	.uleb128 .L53-.LFB2526
+	.uleb128 .L62-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB12-.LFB2526
 	.uleb128 .LEHE12-.LEHB12
@@ -884,11 +1073,11 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB13-.LFB2526
 	.uleb128 .LEHE13-.LEHB13
-	.uleb128 .L54-.LFB2526
+	.uleb128 .L63-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB14-.LFB2526
 	.uleb128 .LEHE14-.LEHB14
-	.uleb128 .L55-.LFB2526
+	.uleb128 .L64-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB15-.LFB2526
 	.uleb128 .LEHE15-.LEHB15
@@ -896,11 +1085,11 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB16-.LFB2526
 	.uleb128 .LEHE16-.LEHB16
-	.uleb128 .L56-.LFB2526
+	.uleb128 .L65-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB17-.LFB2526
 	.uleb128 .LEHE17-.LEHB17
-	.uleb128 .L57-.LFB2526
+	.uleb128 .L66-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB18-.LFB2526
 	.uleb128 .LEHE18-.LEHB18
@@ -908,11 +1097,11 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB19-.LFB2526
 	.uleb128 .LEHE19-.LEHB19
-	.uleb128 .L58-.LFB2526
+	.uleb128 .L67-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB20-.LFB2526
 	.uleb128 .LEHE20-.LEHB20
-	.uleb128 .L59-.LFB2526
+	.uleb128 .L68-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB21-.LFB2526
 	.uleb128 .LEHE21-.LEHB21
@@ -920,14 +1109,50 @@ main:
 	.uleb128 0
 	.uleb128 .LEHB22-.LFB2526
 	.uleb128 .LEHE22-.LEHB22
-	.uleb128 .L60-.LFB2526
+	.uleb128 .L69-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB23-.LFB2526
 	.uleb128 .LEHE23-.LEHB23
-	.uleb128 .L61-.LFB2526
+	.uleb128 .L70-.LFB2526
 	.uleb128 0
 	.uleb128 .LEHB24-.LFB2526
 	.uleb128 .LEHE24-.LEHB24
+	.uleb128 0
+	.uleb128 0
+	.uleb128 .LEHB25-.LFB2526
+	.uleb128 .LEHE25-.LEHB25
+	.uleb128 .L71-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB26-.LFB2526
+	.uleb128 .LEHE26-.LEHB26
+	.uleb128 .L72-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB27-.LFB2526
+	.uleb128 .LEHE27-.LEHB27
+	.uleb128 0
+	.uleb128 0
+	.uleb128 .LEHB28-.LFB2526
+	.uleb128 .LEHE28-.LEHB28
+	.uleb128 .L73-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB29-.LFB2526
+	.uleb128 .LEHE29-.LEHB29
+	.uleb128 .L74-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB30-.LFB2526
+	.uleb128 .LEHE30-.LEHB30
+	.uleb128 0
+	.uleb128 0
+	.uleb128 .LEHB31-.LFB2526
+	.uleb128 .LEHE31-.LEHB31
+	.uleb128 .L75-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB32-.LFB2526
+	.uleb128 .LEHE32-.LEHB32
+	.uleb128 .L76-.LFB2526
+	.uleb128 0
+	.uleb128 .LEHB33-.LFB2526
+	.uleb128 .LEHE33-.LEHB33
 	.uleb128 0
 	.uleb128 0
 .LLSDACSE2526:
@@ -978,7 +1203,7 @@ _ZN9__gnu_cxx11char_traitsIcE6lengthEPKc:
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
 	movq	$0, -16(%rbp)
-.L67:
+.L82:
 	movb	$0, -17(%rbp)
 	movq	-40(%rbp), %rdx
 	movq	-16(%rbp), %rax
@@ -989,16 +1214,16 @@ _ZN9__gnu_cxx11char_traitsIcE6lengthEPKc:
 	call	_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
 	xorl	$1, %eax
 	testb	%al, %al
-	je	.L66
+	je	.L81
 	addq	$1, -16(%rbp)
-	jmp	.L67
-.L66:
+	jmp	.L82
+.L81:
 	movq	-16(%rbp), %rax
 	movq	-8(%rbp), %rcx
 	xorq	%fs:40, %rcx
-	je	.L69
+	je	.L84
 	call	__stack_chk_fail@PLT
-.L69:
+.L84:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -1077,12 +1302,12 @@ _ZZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN11_Save_errnoD
 	call	__errno_location@PLT
 	movl	(%rax), %eax
 	testl	%eax, %eax
-	jne	.L75
+	jne	.L90
 	call	__errno_location@PLT
 	movq	-8(%rbp), %rdx
 	movl	(%rdx), %edx
 	movl	%edx, (%rax)
-.L75:
+.L90:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
@@ -1107,16 +1332,16 @@ _ZZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN10_Range_chk6_
 	movq	%rdi, -8(%rbp)
 	movabsq	$-2147483649, %rax
 	cmpq	%rax, -8(%rbp)
-	jle	.L77
+	jle	.L92
 	movl	$2147483648, %eax
 	cmpq	%rax, -8(%rbp)
-	jl	.L78
-.L77:
+	jl	.L93
+.L92:
 	movl	$1, %eax
-	jmp	.L79
-.L78:
+	jmp	.L94
+.L93:
 	movl	$0, %eax
-.L79:
+.L94:
 	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
@@ -1157,48 +1382,48 @@ _ZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	movq	-88(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
-.LEHB25:
+.LEHB34:
 	call	*%r8
 	movq	%rax, -32(%rbp)
 	movq	-40(%rbp), %rax
 	cmpq	%rax, -88(%rbp)
-	jne	.L82
+	jne	.L97
 	movq	-80(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZSt24__throw_invalid_argumentPKc@PLT
-.L82:
+.L97:
 	call	__errno_location@PLT
 	movl	(%rax), %eax
 	cmpl	$34, %eax
-	je	.L83
+	je	.L98
 	movq	-32(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN10_Range_chk6_S_chkElSt17integral_constantIbLb1EE
 	testb	%al, %al
-	je	.L84
-.L83:
+	je	.L99
+.L98:
 	movl	$1, %eax
-	jmp	.L85
-.L84:
+	jmp	.L100
+.L99:
 	movl	$0, %eax
-.L85:
+.L100:
 	testb	%al, %al
-	je	.L86
+	je	.L101
 	movq	-80(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZSt20__throw_out_of_rangePKc@PLT
-.LEHE25:
-.L86:
+.LEHE34:
+.L101:
 	movq	-32(%rbp), %rax
 	movl	%eax, -44(%rbp)
 	cmpq	$0, -96(%rbp)
-	je	.L87
+	je	.L102
 	movq	-40(%rbp), %rax
 	subq	-88(%rbp), %rax
 	movq	%rax, %rdx
 	movq	-96(%rbp), %rax
 	movq	%rdx, (%rax)
-.L87:
+.L102:
 	movl	-44(%rbp), %ebx
 	leaq	-48(%rbp), %rax
 	movq	%rax, %rdi
@@ -1206,9 +1431,9 @@ _ZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	movl	%ebx, %eax
 	movq	-24(%rbp), %rsi
 	xorq	%fs:40, %rsi
-	je	.L90
-	jmp	.L92
-.L91:
+	je	.L105
+	jmp	.L107
+.L106:
 	endbr64
 	movq	%rax, %rbx
 	leaq	-48(%rbp), %rax
@@ -1216,12 +1441,12 @@ _ZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	call	_ZZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN11_Save_errnoD1Ev
 	movq	%rbx, %rax
 	movq	%rax, %rdi
-.LEHB26:
+.LEHB35:
 	call	_Unwind_Resume@PLT
-.LEHE26:
-.L92:
+.LEHE35:
+.L107:
 	call	__stack_chk_fail@PLT
-.L90:
+.L105:
 	addq	$104, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -1236,12 +1461,12 @@ _ZN9__gnu_cxx6__stoaIlicJiEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	.byte	0x1
 	.uleb128 .LLSDACSE2565-.LLSDACSB2565
 .LLSDACSB2565:
-	.uleb128 .LEHB25-.LFB2565
-	.uleb128 .LEHE25-.LEHB25
-	.uleb128 .L91-.LFB2565
+	.uleb128 .LEHB34-.LFB2565
+	.uleb128 .LEHE34-.LEHB34
+	.uleb128 .L106-.LFB2565
 	.uleb128 0
-	.uleb128 .LEHB26-.LFB2565
-	.uleb128 .LEHE26-.LEHB26
+	.uleb128 .LEHB35-.LFB2565
+	.uleb128 .LEHE35-.LEHB35
 	.uleb128 0
 	.uleb128 0
 .LLSDACSE2565:
@@ -1295,12 +1520,12 @@ _ZZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN11_Save_errnoD2
 	call	__errno_location@PLT
 	movl	(%rax), %eax
 	testl	%eax, %eax
-	jne	.L96
+	jne	.L111
 	call	__errno_location@PLT
 	movq	-8(%rbp), %rdx
 	movl	(%rdx), %edx
 	movl	%edx, (%rax)
-.L96:
+.L111:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
@@ -1362,49 +1587,49 @@ _ZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	movq	-72(%rbp), %rax
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
-.LEHB27:
+.LEHB36:
 	call	*%rcx
 	movd	%xmm0, %eax
 	movl	%eax, -40(%rbp)
 	movq	-32(%rbp), %rax
 	cmpq	%rax, -72(%rbp)
-	jne	.L100
+	jne	.L115
 	movq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZSt24__throw_invalid_argumentPKc@PLT
-.L100:
+.L115:
 	call	__errno_location@PLT
 	movl	(%rax), %eax
 	cmpl	$34, %eax
-	je	.L101
+	je	.L116
 	movl	-40(%rbp), %eax
 	movd	%eax, %xmm0
 	call	_ZZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN10_Range_chk6_S_chkEfSt17integral_constantIbLb0EE
 	testb	%al, %al
-	je	.L102
-.L101:
+	je	.L117
+.L116:
 	movl	$1, %eax
-	jmp	.L103
-.L102:
+	jmp	.L118
+.L117:
 	movl	$0, %eax
-.L103:
+.L118:
 	testb	%al, %al
-	je	.L104
+	je	.L119
 	movq	-64(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZSt20__throw_out_of_rangePKc@PLT
-.LEHE27:
-.L104:
+.LEHE36:
+.L119:
 	movss	-40(%rbp), %xmm0
 	movss	%xmm0, -36(%rbp)
 	cmpq	$0, -80(%rbp)
-	je	.L105
+	je	.L120
 	movq	-32(%rbp), %rax
 	subq	-72(%rbp), %rax
 	movq	%rax, %rdx
 	movq	-80(%rbp), %rax
 	movq	%rdx, (%rax)
-.L105:
+.L120:
 	movss	-36(%rbp), %xmm1
 	movss	%xmm1, -84(%rbp)
 	leaq	-44(%rbp), %rax
@@ -1413,9 +1638,9 @@ _ZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	movss	-84(%rbp), %xmm0
 	movq	-24(%rbp), %rax
 	xorq	%fs:40, %rax
-	je	.L108
-	jmp	.L110
-.L109:
+	je	.L123
+	jmp	.L125
+.L124:
 	endbr64
 	movq	%rax, %rbx
 	leaq	-44(%rbp), %rax
@@ -1423,12 +1648,12 @@ _ZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	call	_ZZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_EN11_Save_errnoD1Ev
 	movq	%rbx, %rax
 	movq	%rax, %rdi
-.LEHB28:
+.LEHB37:
 	call	_Unwind_Resume@PLT
-.LEHE28:
-.L110:
+.LEHE37:
+.L125:
 	call	__stack_chk_fail@PLT
-.L108:
+.L123:
 	addq	$88, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -1443,12 +1668,12 @@ _ZN9__gnu_cxx6__stoaIffcJEEET0_PFT_PKT1_PPS3_DpT2_EPKcS5_PmS9_:
 	.byte	0x1
 	.uleb128 .LLSDACSE2610-.LLSDACSB2610
 .LLSDACSB2610:
-	.uleb128 .LEHB27-.LFB2610
-	.uleb128 .LEHE27-.LEHB27
-	.uleb128 .L109-.LFB2610
+	.uleb128 .LEHB36-.LFB2610
+	.uleb128 .LEHE36-.LEHB36
+	.uleb128 .L124-.LFB2610
 	.uleb128 0
-	.uleb128 .LEHB28-.LFB2610
-	.uleb128 .LEHE28-.LEHB28
+	.uleb128 .LEHB37-.LFB2610
+	.uleb128 .LEHE37-.LEHB37
 	.uleb128 0
 	.uleb128 0
 .LLSDACSE2610:
@@ -1554,26 +1779,26 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
 	movq	%rbx, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
 	cmpq	$0, -32(%rbp)
-	je	.L114
+	je	.L129
 	movq	-32(%rbp), %rax
 	movq	%rax, %rdi
-.LEHB29:
+.LEHB38:
 	call	_ZNSt11char_traitsIcE6lengthEPKc
 	movq	-32(%rbp), %rdx
 	addq	%rdx, %rax
-	jmp	.L115
-.L114:
+	jmp	.L130
+.L129:
 	movq	-32(%rbp), %rax
 	subq	$1, %rax
-.L115:
+.L130:
 	movq	-32(%rbp), %rsi
 	movq	-24(%rbp), %rcx
 	movq	%rax, %rdx
 	movq	%rcx, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
-.LEHE29:
-	jmp	.L118
-.L117:
+.LEHE38:
+	jmp	.L133
+.L132:
 	endbr64
 	movq	%rax, %rbx
 	movq	-24(%rbp), %rax
@@ -1581,10 +1806,10 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD1Ev
 	movq	%rbx, %rax
 	movq	%rax, %rdi
-.LEHB30:
+.LEHB39:
 	call	_Unwind_Resume@PLT
-.LEHE30:
-.L118:
+.LEHE39:
+.L133:
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -1599,12 +1824,12 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
 	.byte	0x1
 	.uleb128 .LLSDACSE2856-.LLSDACSB2856
 .LLSDACSB2856:
-	.uleb128 .LEHB29-.LFB2856
-	.uleb128 .LEHE29-.LEHB29
-	.uleb128 .L117-.LFB2856
+	.uleb128 .LEHB38-.LFB2856
+	.uleb128 .LEHE38-.LEHB38
+	.uleb128 .L132-.LFB2856
 	.uleb128 0
-	.uleb128 .LEHB30-.LFB2856
-	.uleb128 .LEHE30-.LEHB30
+	.uleb128 .LEHB39-.LFB2856
+	.uleb128 .LEHE39-.LEHB39
 	.uleb128 0
 	.uleb128 0
 .LLSDACSE2856:
@@ -1654,14 +1879,14 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv:
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_is_localEv
 	xorl	$1, %eax
 	testb	%al, %al
-	je	.L123
+	je	.L138
 	movq	-8(%rbp), %rax
 	movq	16(%rax), %rdx
 	movq	-8(%rbp), %rax
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_destroyEm
-.L123:
+.L138:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
@@ -1898,9 +2123,9 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_
 	nop
 	movq	-8(%rbp), %rax
 	xorq	%fs:40, %rax
-	je	.L134
+	je	.L149
 	call	__stack_chk_fail@PLT
-.L134:
+.L149:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -2061,9 +2286,9 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm:
 	nop
 	movq	-8(%rbp), %rax
 	xorq	%fs:40, %rax
-	je	.L143
+	je	.L158
 	call	__stack_chk_fail@PLT
-.L143:
+.L158:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -2178,7 +2403,7 @@ _ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_:
 	.size	_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_, .-_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
 	.section	.rodata
 	.align 8
-.LC14:
+.LC17:
 	.string	"basic_string::_M_construct null not valid"
 	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag,comdat
 	.align 2
@@ -2204,20 +2429,20 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_S
 	movq	%rax, %rdi
 	call	_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
 	testb	%al, %al
-	je	.L152
+	je	.L167
 	movq	-32(%rbp), %rax
 	cmpq	-40(%rbp), %rax
-	je	.L152
+	je	.L167
 	movl	$1, %eax
-	jmp	.L153
-.L152:
+	jmp	.L168
+.L167:
 	movl	$0, %eax
-.L153:
+.L168:
 	testb	%al, %al
-	je	.L154
-	leaq	.LC14(%rip), %rdi
+	je	.L169
+	leaq	.LC17(%rip), %rdi
 	call	_ZSt19__throw_logic_errorPKc@PLT
-.L154:
+.L169:
 	movq	-40(%rbp), %rdx
 	movq	-32(%rbp), %rax
 	movq	%rdx, %rsi
@@ -2226,7 +2451,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_S
 	movq	%rax, -16(%rbp)
 	movq	-16(%rbp), %rax
 	cmpq	$15, %rax
-	jbe	.L155
+	jbe	.L170
 	leaq	-16(%rbp), %rcx
 	movq	-24(%rbp), %rax
 	movl	$0, %edx
@@ -2243,7 +2468,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_S
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
-.L155:
+.L170:
 	movq	-24(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
@@ -2261,9 +2486,9 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_S
 	nop
 	movq	-8(%rbp), %rax
 	xorq	%fs:40, %rax
-	je	.L156
+	je	.L171
 	call	__stack_chk_fail@PLT
-.L156:
+.L171:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -2315,21 +2540,21 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_S_copyEPcPKcm:
 	movq	%rsi, -16(%rbp)
 	movq	%rdx, -24(%rbp)
 	cmpq	$1, -24(%rbp)
-	jne	.L160
+	jne	.L175
 	movq	-16(%rbp), %rdx
 	movq	-8(%rbp), %rax
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
 	call	_ZNSt11char_traitsIcE6assignERcRKc
-	jmp	.L162
-.L160:
+	jmp	.L177
+.L175:
 	movq	-24(%rbp), %rdx
 	movq	-16(%rbp), %rcx
 	movq	-8(%rbp), %rax
 	movq	%rcx, %rsi
 	movq	%rax, %rdi
 	call	_ZNSt11char_traitsIcE4copyEPcPKcm
-.L162:
+.L177:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
@@ -2469,7 +2694,7 @@ _ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_
 .LFE3131:
 	.size	_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag, .-_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
 	.section	.rodata
-.LC15:
+.LC18:
 	.string	"basic_string::_M_create"
 	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm,comdat
 	.align 2
@@ -2498,20 +2723,20 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm:
 	cmpq	%rax, %rbx
 	seta	%al
 	testb	%al, %al
-	je	.L176
-	leaq	.LC15(%rip), %rdi
+	je	.L191
+	leaq	.LC18(%rip), %rdi
 	call	_ZSt20__throw_length_errorPKc@PLT
-.L176:
+.L191:
 	movq	-32(%rbp), %rax
 	movq	(%rax), %rax
 	cmpq	%rax, -40(%rbp)
-	jnb	.L177
+	jnb	.L192
 	movq	-32(%rbp), %rax
 	movq	(%rax), %rax
 	movq	-40(%rbp), %rdx
 	addq	%rdx, %rdx
 	cmpq	%rdx, %rax
-	jnb	.L177
+	jnb	.L192
 	movq	-40(%rbp), %rax
 	leaq	(%rax,%rax), %rdx
 	movq	-32(%rbp), %rax
@@ -2524,13 +2749,13 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm:
 	cmpq	%rax, %rbx
 	seta	%al
 	testb	%al, %al
-	je	.L177
+	je	.L192
 	movq	-24(%rbp), %rax
 	movq	%rax, %rdi
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE8max_sizeEv
 	movq	-32(%rbp), %rdx
 	movq	%rax, (%rdx)
-.L177:
+.L192:
 	movq	-32(%rbp), %rax
 	movq	(%rax), %rax
 	leaq	1(%rax), %rbx
@@ -2716,9 +2941,9 @@ _ZN9__gnu_cxx13new_allocatorIcE8allocateEmPKv:
 	cmpq	%rax, -16(%rbp)
 	seta	%al
 	testb	%al, %al
-	je	.L191
+	je	.L206
 	call	_ZSt17__throw_bad_allocv@PLT
-.L191:
+.L206:
 	movq	-16(%rbp), %rax
 	movq	%rax, %rdi
 	call	_Znwm@PLT
@@ -2744,9 +2969,9 @@ _Z41__static_initialization_and_destruction_0ii:
 	movl	%edi, -4(%rbp)
 	movl	%esi, -8(%rbp)
 	cmpl	$1, -4(%rbp)
-	jne	.L195
+	jne	.L210
 	cmpl	$65535, -8(%rbp)
-	jne	.L195
+	jne	.L210
 	leaq	_ZStL8__ioinit(%rip), %rdi
 	call	_ZNSt8ios_base4InitC1Ev@PLT
 	leaq	__dso_handle(%rip), %rdx
@@ -2754,7 +2979,7 @@ _Z41__static_initialization_and_destruction_0ii:
 	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
 	movq	%rax, %rdi
 	call	__cxa_atexit@PLT
-.L195:
+.L210:
 	nop
 	leave
 	.cfi_def_cfa 7, 8

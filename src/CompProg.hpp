@@ -18,16 +18,19 @@
     namespace CP {
         class Basic {
             public:
-                inline void AreaOfCircle(float);
+                void AreaOfCircle(float);
         };
         class Pattern {
             public:
-                void Rectangle(unsigned int, unsigned int);
-                void HollowRectangle(unsigned int, unsigned int);
-                void HalfPyramid(unsigned int);
-                void XInvertedHalfPyramid(unsigned int);
-                void YInvertedHalfPyramid(unsigned int);
-                void XYInvertedHalfPyramid(unsigned int);
+                void StarRectangle(unsigned int, unsigned int);
+                void HollowStarRectangle(unsigned int, unsigned int);
+                void HalfStarPyramid(unsigned int);
+                void XInvertedHalfStarPyramid(unsigned int);
+                void YInvertedHalfStarPyramid(unsigned int);
+                void XYInvertedHalfStarPyramid(unsigned int);
+                void HalfNumPattern(unsigned int);
+                void FloydsTriangle(unsigned int);
+                void ButterflyStarPattern(unsigned int);
         };
     }
 

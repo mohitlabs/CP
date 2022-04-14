@@ -25,37 +25,52 @@ int main(const int argc, char* const argv[]) {
         else if (strcmp(argv[1], "AreaOfCircle") == 0) {
             basic -> AreaOfCircle(std::stof(argv[2]));
         }
-        else if (strcmp(argv[1], "Rectangle") == 0) {
+        else if (strcmp(argv[1], "StarRectangle") == 0) {
             unsigned int rows, cols;
             rows = std::stoi(strtok(argv[2], "xX"));
             cols = std::stoi(strtok(NULL, "xX"));
-            pattern -> Rectangle(rows, cols);
+            pattern -> StarRectangle(rows, cols);
         }
-        else if (strcmp(argv[1], "HollowRectangle") == 0) {
+        else if (strcmp(argv[1], "HollowStarRectangle") == 0) {
             unsigned int rows, cols;
             rows = std::stoi(strtok(argv[2], "xX"));
             cols = std::stoi(strtok(NULL, "xX"));
-            pattern -> HollowRectangle(rows, cols);
+            pattern -> HollowStarRectangle(rows, cols);
         }
-        else if (strcmp(argv[1], "HalfPyramid") == 0) {
+        else if (strcmp(argv[1], "HalfStarPyramid") == 0) {
             unsigned int n;
             n = std::stoi(argv[2]);
-            pattern -> HalfPyramid(n);
+            pattern -> HalfStarPyramid(n);
         }
-        else if (strcmp(argv[1], "XInvertedHalfPyramid") == 0) {
+        else if (strcmp(argv[1], "XInvertedHalfStarPyramid") == 0) {
             unsigned int n;
             n = std::stoi(argv[2]);
-            pattern -> XInvertedHalfPyramid(n);
+            pattern -> XInvertedHalfStarPyramid(n);
         }
-        else if (strcmp(argv[1], "YInvertedHalfPyramid") == 0) {
+        else if (strcmp(argv[1], "YInvertedHalfStarPyramid") == 0) {
             unsigned int n;
             n = std::stoi(argv[2]);
-            pattern -> YInvertedHalfPyramid(n);
+            pattern -> YInvertedHalfStarPyramid(n);
         }
-        else if (strcmp(argv[1], "XYInvertedHalfPyramid") == 0) {
+        else if (strcmp(argv[1], "XYInvertedHalfStarPyramid") == 0) {
             unsigned int n;
             n = std::stoi(argv[2]);
-            pattern -> XYInvertedHalfPyramid(n);
+            pattern -> XYInvertedHalfStarPyramid(n);
+        }
+        else if (strcmp(argv[1], "HalfNumPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> HalfNumPattern(n);
+        }
+        else if (strcmp(argv[1], "FloydsTriangle") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> FloydsTriangle(n);
+        }
+        else if (strcmp(argv[1], "ButterflyStarPattern") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> ButterflyStarPattern(n);
         }
         else
             std::cout << "\n" << "Invalid Input!" << std::endl;
