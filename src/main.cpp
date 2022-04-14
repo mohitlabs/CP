@@ -72,6 +72,21 @@ int main(const int argc, char* const argv[]) {
             n = std::stoi(argv[2]);
             pattern -> ButterflyStarPattern(n);
         }
+        else if (strcmp(argv[1], "YInvertedHalfNumPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> YInvertedHalfNumPyramid(n);
+        }
+        else if (strcmp(argv[1], "HalfBinaryPyramid") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> HalfBinaryPyramid(n);
+        }
+        else if (strcmp(argv[1], "RhombusStarPattern") == 0) {
+            unsigned int n;
+            n = std::stoi(argv[2]);
+            pattern -> RhombusStarPattern(n);
+        }
         else
             std::cout << "\n" << "Invalid Input!" << std::endl;
     }

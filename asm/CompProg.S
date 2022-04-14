@@ -384,6 +384,10 @@ _ZN2CP7Pattern25XYInvertedHalfStarPyramidEj:
 	.cfi_endproc
 .LFE2532:
 	.size	_ZN2CP7Pattern25XYInvertedHalfStarPyramidEj, .-_ZN2CP7Pattern25XYInvertedHalfStarPyramidEj
+	.section	.rodata
+.LC7:
+	.string	" "
+	.text
 	.align 2
 	.globl	_ZN2CP7Pattern14HalfNumPatternEj
 	.type	_ZN2CP7Pattern14HalfNumPatternEj, @function
@@ -413,6 +417,9 @@ _ZN2CP7Pattern14HalfNumPatternEj:
 	movl	%eax, %esi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZNSolsEj@PLT
+	leaq	.LC7(%rip), %rsi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	addl	$1, -4(%rbp)
 	jmp	.L54
 .L53:
@@ -460,7 +467,7 @@ _ZN2CP7Pattern14FloydsTriangleEj:
 	movl	%eax, %esi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZNSolsEj@PLT
-	leaq	.LC6(%rip), %rsi
+	leaq	.LC7(%rip), %rsi
 	movq	%rax, %rdi
 	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 	addl	$1, -12(%rbp)
@@ -564,9 +571,124 @@ _ZN2CP7Pattern20ButterflyStarPatternEj:
 	.cfi_endproc
 .LFE2535:
 	.size	_ZN2CP7Pattern20ButterflyStarPatternEj, .-_ZN2CP7Pattern20ButterflyStarPatternEj
+	.align 2
+	.globl	_ZN2CP7Pattern23YInvertedHalfNumPyramidEj
+	.type	_ZN2CP7Pattern23YInvertedHalfNumPyramidEj, @function
+_ZN2CP7Pattern23YInvertedHalfNumPyramidEj:
+.LFB2536:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	$1, -8(%rbp)
+.L78:
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	ja	.L79
+	movl	-28(%rbp), %eax
+	movl	%eax, -4(%rbp)
+.L77:
+	movl	-4(%rbp), %eax
+	cmpl	-8(%rbp), %eax
+	jb	.L76
+	movl	-28(%rbp), %eax
+	subl	-4(%rbp), %eax
+	addl	$1, %eax
+	movl	%eax, %esi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZNSolsEj@PLT
+	leaq	.LC7(%rip), %rsi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	subl	$1, -4(%rbp)
+	jmp	.L77
+.L76:
+	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
+	movq	%rax, %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZNSolsEPFRSoS_E@PLT
+	addl	$1, -8(%rbp)
+	jmp	.L78
+.L79:
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2536:
+	.size	_ZN2CP7Pattern23YInvertedHalfNumPyramidEj, .-_ZN2CP7Pattern23YInvertedHalfNumPyramidEj
+	.section	.rodata
+.LC8:
+	.string	" 1"
+.LC9:
+	.string	" 0"
+	.text
+	.align 2
+	.globl	_ZN2CP7Pattern17HalfBinaryPyramidEj
+	.type	_ZN2CP7Pattern17HalfBinaryPyramidEj, @function
+_ZN2CP7Pattern17HalfBinaryPyramidEj:
+.LFB2537:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	$1, -8(%rbp)
+.L86:
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	ja	.L87
+	movl	$1, -4(%rbp)
+.L85:
+	movl	-4(%rbp), %eax
+	cmpl	-8(%rbp), %eax
+	ja	.L82
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	andl	$1, %eax
+	testl	%eax, %eax
+	jne	.L83
+	leaq	.LC8(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	jmp	.L84
+.L83:
+	leaq	.LC9(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+.L84:
+	addl	$1, -4(%rbp)
+	jmp	.L85
+.L82:
+	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rax
+	movq	%rax, %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZNSolsEPFRSoS_E@PLT
+	addl	$1, -8(%rbp)
+	jmp	.L86
+.L87:
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2537:
+	.size	_ZN2CP7Pattern17HalfBinaryPyramidEj, .-_ZN2CP7Pattern17HalfBinaryPyramidEj
 	.type	_Z41__static_initialization_and_destruction_0ii, @function
 _Z41__static_initialization_and_destruction_0ii:
-.LFB3241:
+.LFB3243:
 	.cfi_startproc
 	endbr64
 	pushq	%rbp
@@ -578,9 +700,9 @@ _Z41__static_initialization_and_destruction_0ii:
 	movl	%edi, -4(%rbp)
 	movl	%esi, -8(%rbp)
 	cmpl	$1, -4(%rbp)
-	jne	.L76
+	jne	.L90
 	cmpl	$65535, -8(%rbp)
-	jne	.L76
+	jne	.L90
 	leaq	_ZStL8__ioinit(%rip), %rdi
 	call	_ZNSt8ios_base4InitC1Ev@PLT
 	leaq	__dso_handle(%rip), %rdx
@@ -588,17 +710,17 @@ _Z41__static_initialization_and_destruction_0ii:
 	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
 	movq	%rax, %rdi
 	call	__cxa_atexit@PLT
-.L76:
+.L90:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE3241:
+.LFE3243:
 	.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destruction_0ii
 	.type	_GLOBAL__sub_I__ZN2CP5Basic12AreaOfCircleEf, @function
 _GLOBAL__sub_I__ZN2CP5Basic12AreaOfCircleEf:
-.LFB3242:
+.LFB3244:
 	.cfi_startproc
 	endbr64
 	pushq	%rbp
@@ -613,7 +735,7 @@ _GLOBAL__sub_I__ZN2CP5Basic12AreaOfCircleEf:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE3242:
+.LFE3244:
 	.size	_GLOBAL__sub_I__ZN2CP5Basic12AreaOfCircleEf, .-_GLOBAL__sub_I__ZN2CP5Basic12AreaOfCircleEf
 	.section	.init_array,"aw"
 	.align 8

@@ -83,7 +83,7 @@ void CP::Pattern::XYInvertedHalfStarPyramid(unsigned int n) {
 void CP::Pattern::HalfNumPattern(unsigned int n) {
     for (unsigned int i = 1; i <= n; i++) {
         for (unsigned int j = 1; j <= i; j++) {
-            std::cout << i;
+            std::cout << i << " ";
         }
         std::cout << std::endl;
     }
@@ -93,7 +93,7 @@ void CP::Pattern::FloydsTriangle(unsigned int n) {
     unsigned int counter = 1;
     for (unsigned int i = 1; i <= n; i++) {
         for (unsigned int j = 1; j <= i; j++) {
-            std::cout << counter << "  ";
+            std::cout << counter << " ";
             counter++;
         }
         std::cout << std::endl;
@@ -112,5 +112,34 @@ void CP::Pattern::ButterflyStarPattern(unsigned int n) {
                 std::cout << "  ";
         }
         std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::YInvertedHalfNumPyramid(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = n; j >= i; j--) {
+            std::cout << n-j+1 << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::HalfBinaryPyramid(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = 1; j <= i; j++) {
+            if ((i+j) % 2 == 0)
+                std::cout << " 1";
+            else
+                std::cout << " 0";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void CP::Pattern::RhombusStarPattern(unsigned int n) {
+    for (unsigned int i = 1; i <= n; i++) {
+        for (unsigned int j = 1; j <= n; j++) {
+            std::cout << "";
+        }
     }
 }

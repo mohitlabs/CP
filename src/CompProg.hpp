@@ -31,6 +31,9 @@
                 void HalfNumPattern(unsigned int);
                 void FloydsTriangle(unsigned int);
                 void ButterflyStarPattern(unsigned int);
+                void YInvertedHalfNumPyramid(unsigned int);
+                void HalfBinaryPyramid(unsigned int);
+                void RhombusStarPattern(unsigned int);
         };
     }
 
