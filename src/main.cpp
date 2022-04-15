@@ -15,77 +15,70 @@ int main(const int argc, char* const argv[]) {
     #ifdef _WIN32
         system("cls");
     #endif
-
-    CP::Basic* basic = new CP::Basic();
-    CP::Pattern* pattern = new CP::Pattern();
     
     if (argc == 3) {
         if (strcmp(argv[1], "Print") == 0)
             std::cout << "\n" << argv[2] << std::endl;
         else if (strcmp(argv[1], "AreaOfCircle") == 0) {
-            basic -> AreaOfCircle(std::stof(argv[2]));
+            CP::Basic::AreaOfCircle(std::stof(argv[2]));
         }
         else if (strcmp(argv[1], "StarRectangle") == 0) {
-            unsigned int rows, cols;
-            rows = std::stoi(strtok(argv[2], "xX"));
-            cols = std::stoi(strtok(NULL, "xX"));
-            pattern -> StarRectangle(rows, cols);
+            CP::Pattern::SetRows(std::stoi(strtok(argv[2], "xX")));
+            CP::Pattern::SetCols(std::stoi(strtok(NULL, "xX")));
+            CP::Pattern::StarRectangle();
         }
         else if (strcmp(argv[1], "HollowStarRectangle") == 0) {
-            unsigned int rows, cols;
-            rows = std::stoi(strtok(argv[2], "xX"));
-            cols = std::stoi(strtok(NULL, "xX"));
-            pattern -> HollowStarRectangle(rows, cols);
+            CP::Pattern::SetRows(std::stoi(strtok(argv[2], "xX")));
+            CP::Pattern::SetCols(std::stoi(strtok(NULL, "xX")));
+            CP::Pattern::HollowStarRectangle();
         }
         else if (strcmp(argv[1], "HalfStarPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> HalfStarPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::HalfStarPyramid();
         }
         else if (strcmp(argv[1], "XInvertedHalfStarPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> XInvertedHalfStarPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::XInvertedHalfStarPyramid();
         }
         else if (strcmp(argv[1], "YInvertedHalfStarPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> YInvertedHalfStarPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::YInvertedHalfStarPyramid();
         }
         else if (strcmp(argv[1], "XYInvertedHalfStarPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> XYInvertedHalfStarPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::XYInvertedHalfStarPyramid();
         }
         else if (strcmp(argv[1], "HalfNumPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> HalfNumPattern(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::HalfNumPyramid();
         }
         else if (strcmp(argv[1], "FloydsTriangle") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> FloydsTriangle(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::FloydsTriangle();
         }
         else if (strcmp(argv[1], "ButterflyStarPattern") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> ButterflyStarPattern(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::ButterflyStarPattern();
         }
         else if (strcmp(argv[1], "YInvertedHalfNumPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> YInvertedHalfNumPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::YInvertedHalfNumPyramid();
         }
         else if (strcmp(argv[1], "HalfBinaryPyramid") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> HalfBinaryPyramid(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::HalfBinaryPyramid();
         }
         else if (strcmp(argv[1], "RhombusStarPattern") == 0) {
-            unsigned int n;
-            n = std::stoi(argv[2]);
-            pattern -> RhombusStarPattern(n);
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::RhombusStarPattern();
+        }
+        else if (strcmp(argv[1], "NumPyramid") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::NumPyramid();
+        }
+        else if (strcmp(argv[1], "PalindromicPyramid") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::PalindromicPyramid();
         }
         else
             std::cout << "\n" << "Invalid Input!" << std::endl;

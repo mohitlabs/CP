@@ -18,22 +18,29 @@
     namespace CP {
         class Basic {
             public:
-                void AreaOfCircle(float);
+                static void AreaOfCircle(const float);
         };
         class Pattern {
+            private:
+                static unsigned int rows, cols, dimen;
             public:
-                void StarRectangle(unsigned int, unsigned int);
-                void HollowStarRectangle(unsigned int, unsigned int);
-                void HalfStarPyramid(unsigned int);
-                void XInvertedHalfStarPyramid(unsigned int);
-                void YInvertedHalfStarPyramid(unsigned int);
-                void XYInvertedHalfStarPyramid(unsigned int);
-                void HalfNumPattern(unsigned int);
-                void FloydsTriangle(unsigned int);
-                void ButterflyStarPattern(unsigned int);
-                void YInvertedHalfNumPyramid(unsigned int);
-                void HalfBinaryPyramid(unsigned int);
-                void RhombusStarPattern(unsigned int);
+                static void SetRows(const unsigned int);
+                static void SetCols(const unsigned int);
+                static void SetDimen(const unsigned int);
+                static void StarRectangle(void);
+                static void HollowStarRectangle(void);
+                static void HalfStarPyramid(void);
+                static void XInvertedHalfStarPyramid(void);
+                static void YInvertedHalfStarPyramid(void);
+                static void XYInvertedHalfStarPyramid(void);
+                static void HalfNumPyramid(void);
+                static void FloydsTriangle(void);
+                static void ButterflyStarPattern(void);
+                static void YInvertedHalfNumPyramid(void);
+                static void HalfBinaryPyramid(void);
+                static void RhombusStarPattern(void);
+                static void NumPyramid(void);
+                static void PalindromicPyramid(void);
         };
     }
 
