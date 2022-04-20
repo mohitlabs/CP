@@ -52,13 +52,29 @@ int main(const int argc, char* const argv[]) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
             CP::Pattern::HalfNumPyramid();
         }
+        else if (strcmp(argv[1], "NumPyramid") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::NumPyramid();
+        }
+        else if (strcmp(argv[1], "NumPyramid2") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::NumPyramid2();
+        }
         else if (strcmp(argv[1], "FloydsTriangle") == 0) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
             CP::Pattern::FloydsTriangle();
         }
+        else if (strcmp(argv[1], "PascalsTriangle") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::PascalsTriangle();
+        }
         else if (strcmp(argv[1], "ButterflyStarPattern") == 0) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
             CP::Pattern::ButterflyStarPattern();
+        }
+        else if (strcmp(argv[1], "HollowButterflyStarPattern") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::HollowButterflyStarPattern();
         }
         else if (strcmp(argv[1], "YInvertedHalfNumPyramid") == 0) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
@@ -72,13 +88,29 @@ int main(const int argc, char* const argv[]) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
             CP::Pattern::RhombusStarPattern();
         }
-        else if (strcmp(argv[1], "NumPyramid") == 0) {
+        else if (strcmp(argv[1], "HollowRhombusStarPattern") == 0) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
-            CP::Pattern::NumPyramid();
+            CP::Pattern::HollowRhombusStarPattern();
         }
         else if (strcmp(argv[1], "PalindromicPyramid") == 0) {
             CP::Pattern::SetDimen(std::stoi(argv[2]));
             CP::Pattern::PalindromicPyramid();
+        }
+        else if (strcmp(argv[1], "DiamondStarPattern") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::DiamondStarPattern();
+        }
+        else if (strcmp(argv[1], "HollowDiamondStarPattern") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::HollowDiamondStarPattern();
+        }
+        else if (strcmp(argv[1], "InscribedDiamondStarPattern") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::InscribedDiamondStarPattern();
+        }
+        else if (strcmp(argv[1], "ZigZagStarPattern") == 0) {
+            CP::Pattern::SetDimen(std::stoi(argv[2]));
+            CP::Pattern::ZigZagStarPattern();
         }
         else
             std::cout << "\n" << "Invalid Input!" << std::endl;

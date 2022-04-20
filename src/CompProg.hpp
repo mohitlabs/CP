@@ -34,13 +34,21 @@
                 static void YInvertedHalfStarPyramid(void);
                 static void XYInvertedHalfStarPyramid(void);
                 static void HalfNumPyramid(void);
+                static void NumPyramid(void);
+                static void NumPyramid2(void);
                 static void FloydsTriangle(void);
+                static void PascalsTriangle(void);
                 static void ButterflyStarPattern(void);
+                static void HollowButterflyStarPattern(void);
                 static void YInvertedHalfNumPyramid(void);
                 static void HalfBinaryPyramid(void);
                 static void RhombusStarPattern(void);
-                static void NumPyramid(void);
+                static void HollowRhombusStarPattern(void);
                 static void PalindromicPyramid(void);
+                static void DiamondStarPattern(void);
+                static void HollowDiamondStarPattern(void);
+                static void InscribedDiamondStarPattern(void);
+                static void ZigZagStarPattern(void);
         };
     }
 
